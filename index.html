@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Apps on Google Play</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- icon -->
+  <link rel="icon" type="image/png"
+    href="https://www.gizchina.com/wp-content/uploads/images/2020/02/20190912104134_1200_675_-_playstore_dark_mode.jpg">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- css link -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+
+  <nav class="navbar navbar-expand-lg " style="color: white;">
+    <div class="container-fluid ">
+      <img
+        src="data:image/png;base64,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"
+        style="border-radius: 150px; cursor: pointer; height: 60px; width: 60px; margin-left: 30px;" alt="">
+      <a style="font-size: 25px; color: rgb(63, 62, 62); " class="navbar-brand w-25 ms-3 " href="#"><b>Google
+          Play</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" style="color:rgb(63, 62, 62); margin-left: -190px;"
+              href="#"><b>Games</b></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link  " style="color: rgb(63, 62, 62); margin-left: -110px;" href="#"><b>Apps</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " style="color:rgb(63, 62, 62); margin-left: -40px;" href="#"> <b>Movies & TV</b></a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:rgb(63, 62, 62); margin-left: 20px;" href="#"><b>Books</b></a>
+
+          </li>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:rgb(63, 62, 62); margin-left: 20px;" href="#"><b>Kids</b></a>
+
+          </li>
+
+        </ul>
+        <form class="icon1 d-flex mt-2" role="search">
+          <b>
+            <i class="fa-solid fa-magnifying-glass fa-lg m-2  " style=" cursor: pointer; color: rgb(63, 62, 62); "></i>
+            &nbsp;&nbsp;&nbsp;
+            <i class="fa-regular fa-circle-question fa-lg m-2" style=" cursor: pointer; color: rgb(63, 62, 62); "></i>
+
+            <img src="./image/InShot_20231029_183145536.jpg"
+              style="border-radius: 200px;  cursor: pointer; height: 40px; width: 40px; margin-left: 20px;" alt="">
+          </b>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- next line -->
+<br>
+  <ul type="none" class=" item-links mb-2 mb-lg-0" >
+    <li >
+  <button class="btn border border-dark" type="button"  style="font-size: 14px; border-radius: 30px; margin-left: 90px; color: rgb(63, 62, 62);"><b><i class="fa-solid fa-tv fa-sm "></i> &nbsp; Window</b></button></li>
+
+  <li>
+    <button class="btn border border-dark" type="button"  style="font-size: 14px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"><b><i class="fa-solid fa-tablet-screen-button fa-sm"></i> &nbsp; Phone</b></button></li>
+  </li>
+
+  <li>
+    <button class="btn border border-dark" type="button"  style="font-size: 14px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"><b><i class="fa-solid fa-table fa-sm"></i> &nbsp; Tablet</b></button></li>
+  </li>
+
+  <li>
+    <button class="btn border border-dark" type="button"  style="font-size: 14px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"><b><i class="fa-solid fa-desktop fa-sm"></i> &nbsp; TV</b></button></li>
+  </li>
+
+  <li>
+    <button class="btn border border-dark" type="button"  style="font-size: 14px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"> <b><i class="fa-solid fa-laptop fa-sm"></i> &nbsp; Chromebook</b></button></li>
+  </li>
+
+  <li>
+    <button class="btn border border-dark" type="button"  style="font-size: 14px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"><b><i class="fa-solid fa-walkie-talkie fa-sm"></i> &nbsp; Watch</b></button></li>
+  </li>
+
+</ul>
+
+<!-- next -->
+<br>
+<br>
+<h5 style="margin-left: 125px;"><b>Play mobile games on the big screen</b></h5>
+<h6 style="margin-left: 125px; font-size: 12px; color: rgb(50, 49, 49);">Google Play Games on PC</h6>
+<br>
+
+<div class="row " style="margin-left: 50px;">
+  <div class="col-4 ">
+    <div class="card bg-light " style="width: 18rem;">
+    <a href="https://play.google.com/store/apps/details?id=com.netmarble.tog&hl=en_IN&gl=US"> <img src="https://sgimage.netmarble.com/images/netmarble/tog/20230726/xfgk1690336582977.jpg"  class="card-img-top rounded-start" style=" width: 400px; height: 250px; cursor: pointer;" alt="..."></a> 
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card bg-light " style="width: 18rem;">
+    <a href="https://play.google.com/store/apps/details?id=com.lilithgame.roc.gp&hl=en_IN&gl=US">  <img src="https://i.ytimg.com/vi/5CBdVmCuDx4/maxresdefault.jpg" class="card-img-top rounded-start" style=" width: 400px; height: 250px; cursor: pointer;" alt="..."> </a>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card bg-light " style="width: 18rem;">
+      <a href="https://play.google.com/store/apps/details?id=com.YoStarEN.Arknights&hl=en_IN&gl=US"><img src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/346b3eac4f8bb50aa405981d242cae82.jpe" class="card-img-top rounded-start" style=" cursor: pointer; width: 400px; height: 250px;"  alt="..."></a>
+    </div>
+  </div>
+  
+</div>
+<br>
+<br>
+
+<!-- rows -->
+
+<h5 style="margin-left: 100px;"><b>Watch TV & movies </b></h5>
+<br>
+
+<div class="row p-4" >
+
+  <div class="col" style="margin-left: -20px;">
+    
+  <a href="https://play.google.com/store/apps/details?id=com.plexapp.android&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/slZYN_wnlAZ4BmyTZZakwfwAGm8JE5btL7u7AifhqCtUuxhtVVxQ1mcgpGOYC7MsAaU=s256-rw"
+  style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "  alt=""></a>
+  <p style="color: rgb(61, 60, 60); margin-left: 55px;">Plex:Stream Movies</p>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">&TV</p>
+  <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.4&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+  <a href="https://play.google.com/store/apps/details?id=com.iqiyi.i18n&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/L40FnQ8nF8zRtUdALz9b23JirsxYA5-0_fkRUlFBMymud09ctBCFrNui4l-ES_V6Uw=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a> 
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;">iQIYI-Drama,Anime,</p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Show</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.5&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+ 
+
+  <div class="col" style="margin-left: -50px;">
+  <a href="https://play.google.com/store/apps/details?id=com.babybus.overseas.superjojo&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/KgRDifkavSN9DfHdJqpupfFCwFsyLQitc2Ho7ISP9DVJyctArNnjTbUwj2TEDIoErxA=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>  
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;">Baby:Bus TV:Kids</p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Videos&Games</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.4&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+   <a href="https://play.google.com/store/apps/details?id=citruss.android&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/wKkTAPdAeLqB1v8ibofzNIOILcG6JLqEMOZ8AMLPzjea2A4bfzlUTuQTlBr-GNYuQw=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;"> CITRUSS World of </p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Shopping</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">3.6&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+   <a href="https://play.google.com/store/search?q=netflix&c=apps&hl=en"> <img src="https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <p style="color: rgb(61, 60, 60); margin-left: 70px;"> Netflix </p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 70px;">4.2&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+ 
+  <div class="col" style="margin-left: -50px;">
+    <a href="https://play.google.com/store/apps/details?id=com.viki.android&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/-hXPnLExSQzEJE2tQtEadfoxaITYPCZm9EoadHZuDpeSkhY_pmW97As0DuNAl1VQtA=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;">Viki:Asian Dramas &</p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Movies</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.7&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+   <a href="https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/p9Q58dQvvb882obki0Vlj3Lx9C2ODjDiLCxf4-bF7q6Patd2bxzHsMvqJDjs1YER7g=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <p style="color: rgb(61, 60, 60); margin-left: 70px;">Amazon Prime </p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 70px;">Video</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 70px;">4.2&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+ 
+</div>
+
+
+<!-- next row -->
+<br>
+<br>
+<br>
+<h5 style="margin-left: 100px;"><b>Edit photos like a pro</b></h5>
+<br>
+
+<div class="row p-4" >
+
+  <div class="col" style="margin-left: -20px;">
+  <a href="https://play.google.com/store/apps/details?id=com.adobe.psmobile&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/vmfXSdmCjGBHCTNaeMhItGx528WvEdgh8DPGLjvzH_fdMVAWlHnNwtSDUDaJcvoAr6sE=s256-rw"
+  style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a> 
+  <br>
+  <p style="color: rgb(61, 60, 60); margin-left: 55px;">Photoshop Express</p>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Photo Editor</p>
+  <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.4&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+   <a href="https://play.google.com/store/search?q=fimo&c=apps&hl=en"><img src="https://play-lh.googleusercontent.com/XEfiUn1XFXJWiJL5Y4zIA43I8Lvijtn_7u4fzoF2EHXqfEekkUCkiKg_jrI_enbGgg=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a> 
+    <br>
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;">FIMO-Analog Camera</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">3.5&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+  <a href="https://play.google.com/store/apps/details?id=com.switchlight.mobile&hl=en_IN&gl=US">  <img src="https://play-lh.googleusercontent.com/PtFaG0_hk338TOFdMi_0xfAiB4EdWrGrjrUb_fbWeIlGoY6V7FCm_vF3m_By8eni_74b=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <br>
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;">SwitchLight-AI photo</p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Editor</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.1&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+   <a href="https://play.google.com/store/apps/details?id=vip.invit.anna&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/lZIgCdYwzKerajQsHO_RDeMGo8UPjzBtofUJS4YTYWPxQlGAvDoAZcao4QrqLXWWXW8=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <br>
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;"> Invitation Maker Flyer</p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;"> Creator</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.5&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+    <a href="https://play.google.com/store/apps/details?id=com.freepikcompany.freepik&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/ssrpBT94LnMy6mgyNbbEj_9SONp8h4lK8HWrN4qR67dyfwIjgNTYJZOSY4ZOL2yC60uY=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <br>
+    <p style="color: rgb(61, 60, 60); margin-left: 70px;">Freepik</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 70px;">3.9&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+ 
+  <div class="col" style="margin-left: -50px;">
+    <a href="https://play.google.com/store/apps/details?id=com.camerasideas.trimmer&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/LS-Lfnz9sn3zhfBkA1OL39zmi-ULSf7YrMNkPU9Cwq_NVz0enZhZoQSZbCThfOXA_A=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <br>
+    <p style="color: rgb(61, 60, 60); margin-left: 55px;">YouCut-Video Editor</p>
+    <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">& Maker</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 55px;">4.6&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+
+  <div class="col" style="margin-left: -50px;">
+    <a href="https://play.google.com/store/apps/details?id=com.energysh.quickarte&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/EwItBpFQmKBSOn9gq3CT6W6_nFKxURasDgmaaavce5uJa0XkChy7PUJnIBeN2mHx7w=s256-rw"
+    style="border-radius: 25px; height: 130px; margin-left: 50px;" width="150px "    alt=""></a>
+    <br>
+    <p style="color: rgb(61, 60, 60); margin-left: 70px;">DrawShow</p>
+    <h6 style="color: rgb(107, 103, 103); margin-top: -15px; margin-left: 70px;">4.2&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+  </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- app row -->
+
+<br>
+<br>
+<br>
+<h5 style="margin-left: 100px;"><b>Top Charts</b></h5>
+<br>
+<ul type="none" class=" item-links mb-2 mb-lg-0" style="margin-left: -30px;">
+  <li >
+<button class="btn border border-dark" type="button"  style="font-size: 15px; border-radius: 30px; margin-left: 90px; color: rgb(63, 62, 62);"><b>Top free</b></button></li>
+
+<li>
+  <button class="btn border border-dark" type="button"  style="font-size: 15px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"><b>Top grossing</b></button></li>
+</li>
+
+<li>
+  <button class="btn border border-dark" type="button"  style="font-size: 15px; border-radius: 30px; margin-left: 30px; color: rgb(63, 62, 62);"><b>Top paid</b></button></li>
+</li>
+</ul>
+
+<!-- apps -->
+
+<div class="row p-5" style="margin-left: 5px;">
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+           <a href="https://play.google.com/store/search?q=instagram&c=apps&hl=en"> <img src="https://play-lh.googleusercontent.com/VRMWkE5p3CkWhJs6nv-9ZsLAs1QOg5ob1_3qg-rckwYW7yp1fMrYZqnEFpk0IoVP4LM=s64-rw"
+              class="img-fluid " style=" height: 60px; margin-top: -7px;  width: 60px; border-radius: 10px;" alt="..."> </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark" style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">Instagram</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Social</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.2&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+         <a href="https://play.google.com/store/apps/details?id=com.whatsapp&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN=s64-rw" class="img-fluid "
+            style=" height: 60px; width: 60px; margin-top: -7px; border-radius: 10px;" alt="..."></a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark " style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">WhatsApp Messenger</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Communication</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.1&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+          
+          <a href="https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/KCMTYuiTrKom4Vyf0G4foetVOwhKWzNbHWumV73IXexAIy5TTgZipL52WTt8ICL-oIo=s64-rw" style="height: 60px; width: 60px; margin-top: -7px;  border-radius: 10px;" alt="..."></a> 
+          
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark " style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">Facebook</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Social</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.0&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-5" style="margin-left: 5px; margin-top: -90px;">
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+          <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&hl=en_IN&gl=US">  <img src="https://play-lh.googleusercontent.com/8F-0kIQuTleN9DD43WlxIz-4mqmPJ3-978fr1vYF0q_QoZRrlaD3znctc4kWguHdhUCU=s64-rw"
+              class="img-fluid " style=" height: 60px; margin-top: -7px;  width: 60px; border-radius: 10px;" alt="..."> </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark" style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">Meesho:Online Shopping App</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Shopping</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.4&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+          <a href="https://play.google.com/store/apps/details?id=com.phonepe.app&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/6iyA2zVz5PyyMjK5SIxdUhrb7oh9cYVXJ93q6DZkmx07Er1o90PXYeo6mzL4VC2Gj9s=s64-rw" class="img-fluid "
+            style=" height: 60px; width: 60px; margin-top: -7px; border-radius: 10px;" alt="..."></a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark " style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">PhonePe UPI, Payment, Recharge</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Finance</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.4&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+          
+       <a href="https://play.google.com/store/apps/details?id=com.flipkart.android&hl=en_IN&gl=US">    <img src="https://play-lh.googleusercontent.com/q8hxnbpJCYfHipSOG_5tZe5jK_89T6QIsqrEklvGpMFKH8b98pDHJf2tPcn2bxEN96ON=s64-rw" style="height: 60px; width: 60px; margin-top: -7px;  border-radius: 10px;" alt="..."></a> 
+          
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark " style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">Flipkart Online Shopping App</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Shopping</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.3&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-5" style="margin-left: 5px; margin-top: -90px;">
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+            <a href="https://play.google.com/store/apps/details?id=com.snapchat.android&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/nC95iM2f4dXas2K5x-heZ_uUVH9oc-mnlQF9phleiU2Kfk_Z1Rmwrbwv0QOdwQ__T4A=s64-rw"
+              class="img-fluid " style=" height: 60px; margin-top: -7px;  width: 60px; border-radius: 10px;" alt="..."> </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark" style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">Snapchat</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Communication</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">3.9&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+         <a href="https://play.google.com/store/search?q=crafto&c=apps&hl=en"> <img src="https://play-lh.googleusercontent.com/2S5U0e8prP0ldzNR00piovnovERtUPuNrPObos96OwcaN-zLGAnwes-XywTRW47peAU=s64-rw" class="img-fluid "
+            style=" height: 60px; width: 60px; margin-top: -7px; border-radius: 10px;" alt="..."></a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark " style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">Crafto:Quotes with your Photo</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Art & Design</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.2&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card bg-light mb-3" style="max-width: 540px; height: 90px;">
+      <div class="row g-0 ms-3">
+        <div class="img1 col-md-4 mt-1 p-3">
+          
+          <a href="https://play.google.com/store/apps/details?id=com.mast.status.video.edit&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/Iq-3qIphk9Sihvw3XE2oQIDylPg3ThDE3ZWx--S7CzkSl2j849f8FDN11Ol3TUf9Hw=w240-h480-rw" style="height: 60px; width: 60px; margin-top: -7px;  border-radius: 10px;" alt="..."></a> 
+          
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-dark " style="margin-left: -10px; margin-top: -7px;">
+            <h6 class="card-title">mAst:Music Static Video Maker</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">Video Players & Editors</h6>
+            <h6 class="card-text" style="color: rgb(89, 87, 87);">4.3&nbsp;<i class="fa-solid fa-star fa-sm"></i></h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- movies -->
+<h5 style="margin-left: 100px;"><b>New to buy or rent</b></h5>
+
+
+<div class="row1 p-4" >
+
+  <div class="col" style="margin-left: -20px;">
+    <a href="https://play.google.com/store/movies/details/Jawan?id=mTXg3OiYy58.P&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/tpp1wk9h3x6tEeIhef7jE17gRr6pCK1LoL99JFwNHrVrw4KlB707xMdajjCR6g_8wVNhipmfwQs2ruBsVg=w240-h480-rw"
+  style=" height: 300px; margin-left: 50px;" width="200px "    alt=""></a>
+  <br>
+  <br>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Jawan</p>
+  <h6 style="color: rgb(54, 53, 53); margin-top: -15px; margin-left: 55px;">3.8&nbsp;<i class="fa-solid fa-star fa-sm"></i>&nbsp;&nbsp;&nbsp;₹25.00</h6>
+  </div>
+
+  <div class="col" style="margin-left: -20px;">
+   <a href="https://play.google.com/store/movies/details/The_Marvels?id=eyYl97e3NpQ.P&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/zgUfaOjkiqlJWAWW13tYgMcBazjwT-hC_Sd0nHXrSnnCyGHmbNGnk_ScaDR7BqZ9L7ieIXyuTr2EKmling=s256-rw"
+  style=" height: 300px; margin-left: 50px;" width="200px "    alt=""></a> 
+  <br>
+  <br>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">The Marvels</p>
+  <h6 style="color: rgb(54, 53, 53); margin-top: -15px; margin-left: 55px;">2.7&nbsp;<i class="fa-solid fa-star fa-sm"></i>&nbsp;&nbsp;&nbsp;₹690.00</h6>
+  </div>
+
+  <div class="col" style="margin-left: -20px;">
+    <a href="https://play.google.com/store/movies/details/Napoleon?id=EqViY3Szf7Q.P&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/2nbKJFNxR4_stR8vLmOLXou97ulL5j8zm41Mtr1t68oTkysnBm_1G5U7HHeFp6VoewDBnucO_huz5H-PfnE=s256-rw"
+  style=" height: 300px; margin-left: 50px;" width="200px "    alt=""></a>
+  <br>
+  <br>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Napoleon</p>
+  <h6 style="color: rgb(54, 53, 53); margin-top: -15px; margin-left: 55px;">4.5&nbsp;<i class="fa-solid fa-star fa-sm"></i>&nbsp;&nbsp;&nbsp;₹500.00</h6>
+  </div>
+
+  <div class="col" style="margin-left: -20px;">
+    <a href="https://play.google.com/store/movies/details/Taraas?id=qdrrxxAvB7A.P&hl=en_IN&gl=US"><img src="https://play-lh.googleusercontent.com/ZTE5H10zOw0pjUfbSW7DmW6IAKk3OwjtH2o8kRXul4c4pur5mhpYxRDLsRZZWHHz2PRtAQ9R5KM8EVj8fQ=s256-rw"
+  style=" height: 300px; margin-left: 50px;" width="200px "    alt=""></a>
+  <br>
+  <br>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Taraas</p>
+  <h6 style="color: rgb(54, 53, 53); margin-top: -15px; margin-left: 55px;">4.4&nbsp;<i class="fa-solid fa-star fa-sm"></i>&nbsp;&nbsp;&nbsp;₹25.00</h6>
+  </div>
+
+  <div class="col" style="margin-left: -20px;">
+   <a href="https://play.google.com/store/movies/details/Wonka?id=8R8fP6Kjs6I.P&hl=en_IN&gl=US"> <img src="https://play-lh.googleusercontent.com/HZrIBFd5gGrslt9Z_ifUTBByaKTdkF4CnXznWffwOX3ijFXbmzGgHL3aB9WD3shAaoK9tS-rM4BXIBhQX_8=s256-rw"
+  style=" height: 300px; margin-left: 50px;" width="200px "    alt=""></a>
+  <br>
+  <br>
+  <p style="color: rgb(61, 60, 60); margin-top: -20px; margin-left: 55px;">Wonka</p>
+  <h6 style="color: rgb(54, 53, 53); margin-top: -15px; margin-left: 55px;">₹500.00</h6>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br><br>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-muted" style="background-color: rgb(238, 245, 250);">
+  
+    <br>
+      
+      <section class="text-dark p-3">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="fw-bold  mb-4" style="font-size: 22px;">Google Play</h6>
+            <a href="https://play.google.com/store/pass/getstarted" style="text-decoration: none; color: black;"><p style="cursor: pointer;"> Play pass</p></a>  
+              <a href="https://play.google.com/store/points" style="text-decoration: none; color: black;"><p style="cursor: pointer;">Play point </p></a>
+            <a href="https://play.google/giftcards/" style="text-decoration: none;"><p style="cursor: pointer; color: black;">Gift cards</p></a>  
+             <a href="https://play.google.com/store/games?device=windows&code" style="text-decoration: none;"><p style="cursor: pointer; color: black;">Redeem</p></a>  
+             <a href="https://support.google.com/googleplay/answer/2479637?visit_id=638461227305317701-2244818040&rd=1" style="text-decoration: none;"> <p style="cursor: pointer;color: black;">Refund policy</p></a>  
+              
+            </div>
+            <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Links -->
+              <br>
+              <p class="fw-bold mb-4" style="font-size: 16px; cursor: pointer;"> Children and family</p>
+              <a href="https://support.google.com/googleplay/answer/6209547?visit_id=638461227307401143-16951598&p=pff_parentguide&rd=1" style="text-decoration: none; color: black;"><p style="cursor: pointer;">Parent guide</p></a>
+              <a href="https://support.google.com/googleplay/answer/7007852" style="text-decoration: none; color: black;"><p style="cursor: pointer;">Family sharing</p></a>
+              <br>
+             
+            
+  
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+    
+      <!-- Copyright -->
+      <div class="luv text-start text-dark p-3 fw-bold" style="margin-top: 70px; margin-left: -30px; background-color: rgba(0, 0, 0, 0.05);">
+      &nbsp;&nbsp; &nbsp;&nbsp; <a href="https://play.google.com/intl/en-IN_us/about/play-terms/index.html"  style="text-decoration: none; color: black;">Terms of service</a>
+   &nbsp; &nbsp; &nbsp; &nbsp;    <a href="https://policies.google.com/privacy" style="text-decoration: none; color: black;"><p class="text-reset text-light ms-1 fw-bold " style="cursor: pointer;" href="https://policies.google.com/privacy" >Privacy</p></a>
+   &nbsp; &nbsp; &nbsp;    &nbsp; <a href="https://support.google.com/googleplay/answer/6034670?visit_id=638461227307401143-16951598&p=about_play&rd=1" style="text-decoration: none; color: black;"><p class="text-reset text-light ms-1 fw-bold" style="cursor: pointer;" href="https://support.google.com/googleplay/answer/6034670?visit_id=638416355908143103-3708801806&p=about_play&rd=1">About Google Play</p></a>
+   &nbsp; &nbsp; &nbsp; &nbsp;   <a href="https://developer.android.com/index.html" style="text-decoration: none; color: black;"><p class="text-reset text-light ms-1 fw-bold "style="cursor: pointer;" href="https://developer.android.com/">Developers</p></a>
+   &nbsp; &nbsp;  &nbsp; &nbsp; <a href="https://store.google.com/?playredirect=true&pli=1&hl=en-GB" style="text-decoration: none; color: black;"> <p class="text-reset text-light ms-1 fw-bold " style="cursor: pointer;" href="https://store.google.com/?playredirect=true&pli=1&hl=en-GB">Google Store</p></a>
+   &nbsp; &nbsp;  &nbsp; &nbsp;   <p class="text-reset text-light ms-1 fw-bold"  href="">All prices include GST</p>
+       
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+      <!-- end footer -->
+
+</body>
+
+</html>
+

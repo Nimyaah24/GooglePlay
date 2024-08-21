@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.card img {
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.card:hover img {
+
+    transform: scale(1.1);
+}
+
+
+.item-link:hover {
+
+    background-color: black;
+    color: azure;
+}
+
+.btn{
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn:hover{
+    background-color: black;
+    color: azure;
+}
+
+.navbar {
+    position: sticky;
+}
+
+.navbar-nav li :hover {
+    color: rgb(44, 130, 27);
+    transform: scale(1.1);
+}
+
+.navbar-nav li {
+    color: rgb(255, 255, 255);
+    transition: all 0.4s;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.row1{
+    display: flex;
+    flex-direction: row;
+        cursor: pointer;
+        transition: all 0.4s;
+}
+
+.row1 :hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+.luv{
+    display: flex;
+    flex-direction: row;
+}
+
+.luv:hover {
+color: rgb(44, 130, 27);
+transform: scale(1.0.4);
+}
